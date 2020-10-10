@@ -81,7 +81,7 @@ $ curl -sSx socks5h://127.0.0.1:1080 http://ifconfig.co
 - Then launching curl with client-IP address query through the proxy.
 - This query was sent through your server with server-sslibev running.
 - You should get the public IP address of your server with server-sslibev running if all good.
-- Please have a look over the sibling project [proxy-sslibev](https://github.com/samuelhbne/vpn-launchpad/tree/master/proxy-sslibev) for more details.
+- Please have a look over the sibling project [proxy-sslibev](https://github.com/samuelhbne/proxy-sslibev) for more details.
 
 ## How to stop and remove the running container
 
