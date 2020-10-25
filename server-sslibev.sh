@@ -2,6 +2,8 @@
 
 DIR=`dirname $0`
 DIR="$(cd $DIR; pwd)"
+SVCID="sslibev"
+CTNNAME="server-$SVCID"
 IMGNAME="samuelhbne/server-sslibev"
 ARCH=`uname -m`
 
@@ -35,6 +37,22 @@ while [[ $# > 0 ]]; do
 	esac
 done
 
-. $DIR/server-sslibev.env
+. $DIR/$CTNNAME.env
 
-docker run --restart unless-stopped --name server-sslibev -p $SSPORT:8388 -p $SSPORT:8388/udp -d $IMGNAME:$TARGET -w $SSPASS -m $SSMTHD
+echo "Starting $CTNNAME..."
+docker run --name $CTNNAME -p $SSPORT:8388 -p $SSPORT:8388/udp -d $IMGNAME:$TARGET \
+	-w $SSPASS -m $SSMTHD
+echo
+
+sleep 5
+
+CNT=`docker ps|grep $IMGNAME:$TARGET|grep $CTNNAME -c`
+
+if [ $CNT > 0 ]; then
+	echo "$CTNNAME started."
+	echo "Done"
+	exit 0
+else
+	echo "Starting $CTNNAME failed. Check detail with \"docker logs $CTNNAME\""
+	exit 252
+fi
