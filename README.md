@@ -1,6 +1,6 @@
 # server-sslibev
 
-Yet another unofficial [Shadowsocks-libev](https://github.com/shadowsocks/shadowsocks-libev) server installation scripts.
+Yet another unofficial [Shadowsocks-libev](https://github.com/shadowsocks/shadowsocks-libev) server container with x86 and arm/arm64 (Raspberry Pi) support.
 
 ## [Optional] How to build server-sslibev docker image
 
