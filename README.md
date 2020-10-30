@@ -2,6 +2,8 @@
 
 Yet another unofficial [Shadowsocks-libev](https://github.com/shadowsocks/shadowsocks-libev) server container with x86 and arm/arm64 (Raspberry Pi) support.
 
+![docker-build](https://github.com/samuelhbne/server-sslibev/workflows/docker-build/badge.svg)
+
 ## [Optional] How to build server-sslibev docker image
 
 ```shell
